@@ -1,15 +1,14 @@
 # Projet Sport
 
-## Installer Json-server
+## Prerequi
 ```
+npm install -g @vue/cli
 npm install -g json-server
 ```
-
 ### Lancer le faux server
 ```
 json-server .\db.json
 ```
-
 
 ## Installer le projet
 ```
