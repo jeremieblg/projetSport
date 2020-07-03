@@ -10,7 +10,7 @@
           <v-text-field v-model="password" type="password" label="Mot de passe" required clearable></v-text-field>
         </v-row>
         <v-row>
-          <v-btn dark class="mr-4" @click="userExist(email,password)">Se connecter</v-btn>
+          <v-btn dark class="mr-4" @click="login(email,password)">Se connecter</v-btn>
         </v-row>
       </v-form>
     </v-container>
@@ -27,7 +27,13 @@ export default {
     };
   },
   mixins: [dao],
-  methods: {}
+  methods: {
+    async login(email, password) {
+      const user = await this.userExist(email, password);
+      this.$store.dispatch("updateUser", user);
+      return user;
+    }
+  }
 };
 </script>
 

@@ -1,19 +1,20 @@
 {
-    "admin": [
+	"users": [
         {
             "id":0,
             "email":"admin@admin.fr",
-            "password":"admin"
-        }
-		
-	],
-	"users": [
+            "password":"admin",
+            "firstName":"User1Prenom",
+            "lastName":"User1Nom",
+            "admin":true
+        },
 		{
-			"id": 0,
+			"id": 1,
             "email":"user1@user.fr",
             "password":"user1",
             "firstName":"User1Prenom",
             "lastName":"User1Nom",
+            "admin":false,
             "message":[
                 {
                     "date":"2020-01-01",
@@ -52,11 +53,12 @@
             ]
         },
         {
-			"id": 1,
+			"id": 2,
             "email":"user2@user.fr",
             "password":"user2",
             "firstName":"User2Prenom",
             "lastName":"User2Nom",
+            "admin":false,
             "message":[
                 {
                     "date":"2020-01-01",

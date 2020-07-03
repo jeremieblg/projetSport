@@ -7,12 +7,6 @@ export default{
             );
             return user.data[0] ? user.data[0] : undefined;
         },
-        async adminExist(email,password) {
-            const admin = await this.axios.get(
-              `${process.env.VUE_APP_URL_API}/admin?email=${email}&password=${password}`
-            );
-            return admin.data[0] ? admin.data[0] : undefined;
-        }
         // async userExist(email,password){
         //     const user = await vue.axios.get(URL+"/users",{password:password,email:email});
         //     console.log(user);

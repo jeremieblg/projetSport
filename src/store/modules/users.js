@@ -10,11 +10,12 @@ export default {
 	mutations: {
 		updateUser(state, payload) {
 			state.user = payload;
-		}
+		},
+
 	},
 	actions: {
 		updateUser({ commit }, payload) {
 			commit('updateUser', payload);
-		}
+		},
 	}
 };

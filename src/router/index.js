@@ -25,7 +25,7 @@ Vue.use(VueRouter)
     component: Admin,
     meta: { 
       needAuth: true,
-      admin: true
+      admin:true
      }
   },
   {
@@ -43,7 +43,8 @@ Vue.use(VueRouter)
     component: Member,
     meta: { 
       needAuth: true,
-      member:true
+      member:true,
+      admin:false
     }
   },
   {
@@ -63,29 +64,29 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-	const userInStore = store.state.users.user;
+  const userInStore = store.state.users.user;
+  console.log("userinstore",userInStore)
 	const isAuthenticated = userInStore !== null ? true : false;
   const isProtected = to.matched.some((route) => route.meta.needAuth);
-  const isMemberRoute = to.matched.some((route) => route.meta.member);
+  const isMember = to.matched.some((route) => route.meta.needAuth);
+  
   
 
 	if (!isAuthenticated && isProtected) {
 		next({ name: 'Connection' });
 	} else {
-    if(userInStore==null){
-      next()
-    }else{
-      const isAdmin = userInStore.admin; 
+    if(isAuthenticated){
+      const isAdmin = store.state.users.user.admin;
       const isAdminRoute = to.matched.some((route) => route.meta.admin);
       if(!isAdmin && isAdminRoute){
         next({ name: 'Home' });
       }
-      if(isAdmin && isMemberRoute){
-        next({ name: 'Home' })
+      if(isAdmin && !isAdminRoute && isMember){
+        next({ name: 'Home' });
       }
       next()
     }
-    
+    next()
 	}
 });
 
