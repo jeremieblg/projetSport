@@ -26,6 +26,13 @@
 
       <v-spacer></v-spacer>
 
+      <v-btn :to="{name:'Home'}" class="mr-1"><v-icon>mdi-home</v-icon></v-btn>
+      <v-btn :to="{name:'Connection'}" class="mr-1">Connexion</v-btn>
+      <v-btn :to="{name:'Admin'}" class="mr-1">Administration</v-btn>
+      <v-btn :to="{name:'Coach'}" class="mr-1">Espace coach</v-btn>
+      <v-btn :to="{name:'Member'}" class="mr-1">Espace membre</v-btn>
+      <v-btn :to="{name:'About'}" class="mr-1">À propos</v-btn>
+
       <!-- <v-btn href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank" text>
         <span class="mr-2">Latest Release</span>
         <v-icon>mdi-open-in-new</v-icon>
