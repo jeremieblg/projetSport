@@ -14,7 +14,7 @@
           <template v-slot:activator="{ on, attrs }">
             <v-text-field v-model="date" label="Date" readonly v-bind="attrs" v-on="on"></v-text-field>
           </template>
-          <v-date-picker v-model="date" @input="showDatePicker = false"></v-date-picker>
+          <v-date-picker locale="FR" v-model="date" @input="showDatePicker = false"></v-date-picker>
         </v-menu>
       </v-row>
       <v-text-field
@@ -64,9 +64,9 @@
       <v-checkbox v-model="snack" label="Collation" required></v-checkbox>
       <v-text-field v-model="weight" label="Poid" type="number" required></v-text-field>
 
-      <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">Validate</v-btn>
+      <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">Valider</v-btn>
 
-      <v-btn color="error" class="mr-4" @click="reset">Reset Formulaire</v-btn>
+      <v-btn color="error" class="mr-4" @click="reset">Annuler</v-btn>
     </v-form>
   </v-container>
 </template>
