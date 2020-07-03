@@ -25,10 +25,46 @@
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 
+import dao from "@/mixins/dao";
+
 export default {
   name: 'Home',
   components: {
     // HelloWorld
-  }
+  },
+  mixins: [dao],
+  methods: {
+    // async daoTest() {
+      // console.log(await this.userExist("user1@user.fr","user1"));
+      // console.log(await this.getUsers());
+      // console.log(await this.getUser(0));
+      // console.log(await this.deleteUser(2));
+      // console.log(await this.addUser({
+      //   email: "user3@user.fr",
+      //   password: "user3",
+      //   firstName: "User3Prenom",
+      //   lastName: "User3Nom"
+      // }));
+      // console.log(await this.addStatement(2,{
+      //     date: "2020-01-02",
+      //     sport: "ping pong",
+      //     duration: "90",
+      //     intensity: 2,
+      //     breakfast: 2,
+      //     lunch: 1,
+      //     diner: 1,
+      //     weight: 83,
+      //     snack: true,
+      //     mood: 4
+      // }));
+      // console.log(await this.addMessage(2,{
+      //   date:"2020-01-01",
+      //   message:"coucou"
+      // }));
+
+      // console.log(await this.deleteStatement(2,0));
+      // console.log(await this.deleteMessage(2,0));
+    // }
+  },
 }
 </script>
