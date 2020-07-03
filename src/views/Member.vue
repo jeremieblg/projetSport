@@ -1,7 +1,8 @@
 <template>
   <v-container>
     <h1>Votre espace personnel</h1>
-    <v-form ref="form" v-model="valid" lazy-validation>
+    <h2>Ajouter un relevé journalier</h2>
+    <v-form ref="form" v-model="valid" lazy-validation  class="mb-10">
       <v-row>
         <v-menu
           v-model="showDatePicker"
@@ -68,6 +69,8 @@
 
       <v-btn color="error" class="mr-4" @click="reset">Annuler</v-btn>
     </v-form>
+    <h2>Message du coach</h2>
+
   </v-container>
 </template>
 
