@@ -1,6 +1,9 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dark>
+      
+      <v-toolbar-title>Mon coach sportif</v-toolbar-title>
+
       <!-- <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
