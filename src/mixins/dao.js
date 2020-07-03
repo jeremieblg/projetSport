@@ -46,16 +46,16 @@ export default{
         },
         async addStatement(userId,statementObj){
             let statementModel = {
-                "date": "",
-                "sport": "",
-                "duration": "",
-                "intensity": "",
-                "breakfast": "",
-                "lunch": "",
-                "diner": "",
-                "weight": "",
-                "snack": "",
-                "mood": ""
+                date: "",
+                sport: "",
+                duration: "",
+                intensity: "",
+                breakfast: "",
+                lunch: "",
+                diner: "",
+                weight: "",
+                snack: "",
+                mood: ""
             }
 
             Object.assign(statementModel,statementObj);
@@ -68,8 +68,8 @@ export default{
         },
         async addMessage(userId,messageObj){
             let messageModel = {
-                "date": "",
-                "text": ""
+                date: "",
+                text: ""
             }
 
             Object.assign(messageModel,messageObj);

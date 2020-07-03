@@ -78,6 +78,16 @@
     </v-form>
     <h2>Message du coach</h2>
 
+    <v-row>
+      <ul>
+        <li v-for="(message,index) in $store.state.users.user.message" :key="index">
+          Date:{{ message.date }} - Message:{{ message.text }} 
+        </li> 
+      </ul>     
+    </v-row>
+
+
+
     <v-dialog
       v-model="dialog"
       scrollable
@@ -102,7 +112,11 @@
 </template>
 
 <script>
+
+import dao from "@/mixins/dao";
+
 export default {
+  mixins: [dao],
   data() {
     return {
       valid: false,
@@ -127,6 +141,24 @@ export default {
   methods: {
     validate() {
       this.dialog = true;
+      
+      let statement = {
+        date: this.date,
+        sport: this.sport,
+        duration: this.duration,
+        intensity: this.intensityTab.indexOf(this.intensity),
+        breakfast: this.lunchWeight.indexOf(this.breakfast),
+        lunch: this.lunchWeight.indexOf(this.lunch),
+        diner: this.lunchWeight.indexOf(this.dinner),
+        weight: parseInt(this.weight,10),
+        snack: this.snack,
+        mood: this.moodList.indexOf(this.mood)
+      }
+
+      this.addStatement(this.$store.state.users.user.id, statement);
+      
+      this.reset();
+
     },
     reset() {
       this.sport = "";
