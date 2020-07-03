@@ -62,7 +62,7 @@ export default{
 
             let user = await this.getUser(userId);
             user.statement.push(statementModel);
-
+            this.$store.dispatch("updateUser", user);
             await this.deleteUser(userId);
             return await this.addUser(user);
         },
@@ -75,6 +75,7 @@ export default{
             Object.assign(messageModel,messageObj);
 
             let user = await this.getUser(userId);
+            
             user.message.push(messageModel);
 
             await this.deleteUser(userId);
@@ -85,6 +86,7 @@ export default{
 
             user.statement.splice(statementId,1);
 
+            this.$store.dispatch("updateUser", user);
             await this.deleteUser(userId);
 
             return await this.addUser(user);
@@ -95,6 +97,7 @@ export default{
  
             user.message.splice(messageId,1);
 
+            this.$store.dispatch("updateUser", user);
             await this.deleteUser(userId);
 
             return await this.addUser(user);
