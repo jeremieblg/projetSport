@@ -1,0 +1,17 @@
+### userExist
+GET http://localhost:3000/users?password=user1&email=user1@user.fr HTTP/1.1
+
+### amdinExist
+GET http://localhost:3000/admin?password=admin&email=admin@admin.fr HTTP/1.1
+
+### getUsers
+GET http://localhost:3000/users HTTP/1.1
+
+### getUser
+GET http://localhost:3000/users?id=0 HTTP/1.1
+
+### addUser
+
+### addStatement
+
+### addMessage
