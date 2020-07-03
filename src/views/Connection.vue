@@ -19,7 +19,7 @@
 
 <script>
 import dao from "@/mixins/dao";
-import role from "@/mixins/dao";
+import role from "@/mixins/role";
 export default {
   data() {
     return {

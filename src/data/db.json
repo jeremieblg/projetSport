@@ -1,100 +1,66 @@
 {
-	"users": [
+  "users": [
+    {
+      "id": 0,
+      "email": "admin@admin.fr",
+      "password": "admin",
+      "firstName": "AdminPrenom",
+      "lastName": "AdminNom",
+      "admin": true
+    },
+    {
+      "id": 1,
+      "email": "user1@user.fr",
+      "password": "user1",
+      "firstName": "User1Prenom",
+      "lastName": "User1Nom",
+      "admin": false,
+      "message": [
         {
-            "id":0,
-            "email":"admin@admin.fr",
-            "password":"admin",
-            "firstName":"User1Prenom",
-            "lastName":"User1Nom",
-            "admin":true
-        },
-		{
-			"id": 1,
-            "email":"user1@user.fr",
-            "password":"user1",
-            "firstName":"User1Prenom",
-            "lastName":"User1Nom",
-            "admin":false,
-            "message":[
-                {
-                    "date":"2020-01-01",
-                    "text":"blabla coucou"
-                },
-                {
-                    "date":"2020-01-10",
-                    "text":"blabla coucou wazzaaa"
-                }
-            ],
-            "statement":[
-                {
-                    "date":"2020-01-01",
-                    "sport":"levé de fûts",
-                    "duration":"45",
-                    "intensity":1,
-                    "breakfast":1,
-                    "lunch":1,
-                    "diner":1,
-                    "weight":84.2,
-                    "snack":false,
-                    "mood":2
-                },
-                {
-                    "date":"2020-01-02",
-                    "sport":"ping pong",
-                    "duration":"90",
-                    "intensity":2,
-                    "breakfast":2,
-                    "lunch":1,
-                    "diner":1,
-                    "weight":83,
-                    "snack":true,
-                    "mood":4
-                }
-            ]
+          "date": "2020-01-01",
+          "text": "blabla coucou"
         },
         {
-			"id": 2,
-            "email":"user2@user.fr",
-            "password":"user2",
-            "firstName":"User2Prenom",
-            "lastName":"User2Nom",
-            "admin":false,
-            "message":[
-                {
-                    "date":"2020-01-01",
-                    "text":"blabla coucou tralala"
-                },
-                {
-                    "date":"2020-01-01",
-                    "text":"blabla coucou plop"
-                }
-            ],
-            "statement":[
-                {
-                    "date":"2020-01-01",
-                    "sport":"levé de fûts",
-                    "duration":"45",
-                    "intensity":1,
-                    "breakfast":1,
-                    "lunch":1,
-                    "diner":1,
-                    "weight":84.2,
-                    "snack":false,
-                    "mood":2
-                },
-                {
-                    "date":"2020-01-02",
-                    "sport":"ping pong",
-                    "duration":"90",
-                    "intensity":2,
-                    "breakfast":2,
-                    "lunch":1,
-                    "diner":1,
-                    "weight":83,
-                    "snack":true,
-                    "mood":4
-                }
-            ]
-		}
-	]
+          "date": "2020-01-10",
+          "text": "blabla coucou wazzaaa"
+        }
+      ],
+      "statement": [
+        {
+          "date": "2020-01-01",
+          "sport": "levé de fûts",
+          "duration": "45",
+          "intensity": 1,
+          "breakfast": 1,
+          "lunch": 1,
+          "diner": 1,
+          "weight": 84.2,
+          "snack": false,
+          "mood": 2
+        },
+        {
+          "date": "2020-01-02",
+          "sport": "ping pong",
+          "duration": "90",
+          "intensity": 2,
+          "breakfast": 2,
+          "lunch": 1,
+          "diner": 1,
+          "weight": 83,
+          "snack": true,
+          "mood": 3
+        }
+      ]
+    },
+    {
+      "admin": false,
+      "email": "test@test.fr",
+      "password": "test",
+      "firstName": "test",
+      "lastName": "lala",
+      "message": [],
+      "statement": [],
+      "id": 2
+    }
+  ]
 }

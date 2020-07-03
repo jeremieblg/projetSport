@@ -75,7 +75,7 @@ export default{
             Object.assign(messageModel,messageObj);
 
             let user = await this.getUser(userId);
-            
+            console.log(user)
             user.message.push(messageModel);
 
             await this.deleteUser(userId);
