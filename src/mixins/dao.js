@@ -2,11 +2,9 @@
 export default{
     methods: {
         async userExist(email,password) {
-            console.log(password,email);
             const user = await this.axios.get(
-              `http://localhost:3000/users?email=${email}&password=${password}`
+              `${process.env.VUE_APP_URL_API}/users?email=${email}&password=${password}`
             );
-            console.log(user.data);
             return user.data[0] ? user.data[0] : undefined;
           }
         // async userExist(email,password){

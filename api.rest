@@ -8,10 +8,46 @@ GET http://localhost:3000/admin?password=admin&email=admin@admin.fr HTTP/1.1
 GET http://localhost:3000/users HTTP/1.1
 
 ### getUser
-GET http://localhost:3000/users?id=0 HTTP/1.1
+GET http://localhost:3000/users/0 HTTP/1.1
 
 ### addUser
+POST http://localhost:3000/users HTTP/1.1
+Content-Type: application/json; charset=utf-8
+
+{
+"id":2,
+  "email": "user3@user.fr",
+  "password": "user3",
+  "firstName": "User3Prenom",
+  "lastName": "User3Nom",
+  "message": [
+  ],
+  "statement": [
+  ]
+}
 
 ### addStatement
+GET http://localhost:3000/users/2/statement HTTP/1.1
+Content-Type: application/json; charset=utf-8
+
+{
+    "date": "2020-01-01",
+    "sport": "levé de fûts",
+    "duration": "45",
+    "intensity": 1,
+    "breakfast": 1,
+    "lunch": 1,
+    "diner": 1,
+    "weight": 84.2,
+    "snack": false,
+    "mood": 2
+}
 
 ### addMessage
+
+### deleteUser
+DELETE http://localhost:3000/users/3 HTTP/1.1
+
+### deleteMessage
+
+### deleteStatement
