@@ -19,6 +19,7 @@
 
 <script>
 import dao from "@/mixins/dao";
+import role from "@/mixins/dao";
 export default {
   data() {
     return {
@@ -26,11 +27,17 @@ export default {
       password: ""
     };
   },
-  mixins: [dao],
+  mixins: [dao, role],
   methods: {
     async login(email, password) {
       const user = await this.userExist(email, password);
       this.$store.dispatch("updateUser", user);
+      if (this.isAdmin) {
+        this.$router.push({ name: "Coach" });
+      }
+      if (!this.isAdmin) {
+        this.$router.push({ name: "Member" });
+      }
       return user;
     }
   }
