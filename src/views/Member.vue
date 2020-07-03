@@ -64,6 +64,13 @@
 
       <v-checkbox v-model="snack" label="Collation" required></v-checkbox>
       <v-text-field v-model="weight" label="Poid" type="number" required></v-text-field>
+      <v-select
+        v-model="mood"
+        :items="moodList"
+        :rules="[v => !!v || 'Champ requis']"
+        label="Humeur"
+        required
+      ></v-select>
 
       <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">Valider</v-btn>
 
@@ -71,6 +78,26 @@
     </v-form>
     <h2>Message du coach</h2>
 
+    <v-dialog
+      v-model="dialog"
+      scrollable
+      persistent
+      :overlay="false"
+      max-width="500px"
+      transition="dialog-transition"
+    >
+      <v-card>
+        <v-card-title class="headline grey lighten-2" primary-title>Courrage</v-card-title>
+        <v-card-text>{{textDialog}}</v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="primary" text @click="dialog = false">Ok coatch</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-container>
 </template>
 
@@ -78,6 +105,8 @@
 export default {
   data() {
     return {
+      valid: false,
+      dialog: false,
       date: new Date().toISOString().substr(0, 10),
       showDatePicker: false,
       sport: "",
@@ -89,11 +118,16 @@ export default {
       lunch: "",
       dinner: "",
       weight: "",
-      snack: false
+      snack: false,
+      mood: "",
+      moodList: ["maussade", "normal", "bien", "très bien"],
+      textDialog: ""
     };
   },
   methods: {
-    validate() {},
+    validate() {
+      this.dialog = true;
+    },
     reset() {
       this.sport = "";
       this.duration = "";
@@ -103,6 +137,30 @@ export default {
       this.dinner = "";
       this.weight = "";
       this.snack = false;
+      this.mood = "";
+    }
+  },
+  watch: {
+    mood: function(newValue) {
+      switch (newValue) {
+        case "maussade":
+          this.textDialog =
+            "Même si les exercices sont compliqués, il ne faut pas perdre espoir et garder votre objectif en tête.";
+          break;
+        case "normal":
+          this.textDialog = "C'est bien, il faut continuer comme ça !";
+          break;
+        case "bien":
+          this.textDialog =
+            "Le moral ce ressent sur votre corps bien dans la tête et bien dans son corp";
+          break;
+        case "très bien":
+          this.textDialog =
+            "Parfait vous êtes dans un très bon mood garder le cap";
+          break;
+        default:
+          break;
+      }
     }
   }
 };
