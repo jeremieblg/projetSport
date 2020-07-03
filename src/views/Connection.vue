@@ -10,7 +10,7 @@
           <v-text-field v-model="password" type="password" label="Mot de passe" required clearable></v-text-field>
         </v-row>
         <v-row>
-          <v-btn dark class="mr-4" @click="send">Se connecter</v-btn>
+          <v-btn dark class="mr-4" @click="userExist(email,password)">Se connecter</v-btn>
         </v-row>
       </v-form>
     </v-container>
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import dao from "@/mixins/dao";
 export default {
   data() {
     return {
@@ -25,9 +26,8 @@ export default {
       password: ""
     };
   },
-  methods: {
-    send() {}
-  }
+  mixins: [dao],
+  methods: {}
 };
 </script>
 
