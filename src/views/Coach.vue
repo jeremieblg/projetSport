@@ -1,6 +1,9 @@
 <template>
   <div>
-coach
+    <v-container>
+      <h1>Espace coach</h1>
+      <h2>liste des membres</h2>
+    </v-container>
   </div>
 </template>
 
