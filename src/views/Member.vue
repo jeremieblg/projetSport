@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <h1>member</h1>
+    <h1>Votre espace personnel</h1>
     <v-form ref="form" v-model="valid" lazy-validation>
       <v-row>
         <v-menu
